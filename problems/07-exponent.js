@@ -19,10 +19,29 @@ exponent(3, 2); // 9
 exponent(2, -2); // 1/4 (or 0.25)
 exponent(5, 5); // 3125
 ***********************************************************************/
-
+/*
+Write a recursive function that takes 2 parameter, num and the power num will go to.
+if power is pos. then num will raise to what ever power times
+if power is neg. then num will be divided by whatever power times 
+base case will be when power is 0; 
+*/
 function exponent(num, power) {
     // Your code here 
+    if (power === 0){
+        return 1;
+    }
+    if (power > 0){
+        return num * exponent(num, power - 1)
+    }
+    if (power < 0){
+        return 1 / exponent(num, -power)
+    }
+
 }
+console.log(exponent(3, 2)); // 9
+console.log(exponent(2, -2)); // 1/4 (or 0.25)
+console.log(exponent(5, 5)); // 3125
+
   
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
